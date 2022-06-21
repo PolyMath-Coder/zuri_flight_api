@@ -27,7 +27,7 @@ const connect = () => {
 
 app.use(json());
 
-app.use('/', routes);
+app.use('/api', routes);
 
 const port = process.env.PORT || 3000;
 
