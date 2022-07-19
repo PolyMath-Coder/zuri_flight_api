@@ -1,7 +1,6 @@
 const express = require('express');
 require('dotenv').config();
 const { json } = require('express');
-const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
 const AUTH_PASSWORD = process.env.PASSWORD;
 const AUTH_EMAIL = process.env.EMAIL_ADDRESS;
@@ -17,11 +16,6 @@ let transporter = nodemailer.createTransport({
   auth: {
     user: AUTH_EMAIL,
     pass: AUTH_PASSWORD,
-    // clientId:
-    //   '360180968985-j0osbkndjam9h2fbmr8oltoajeqa75ce.apps.googleusercontent.com',
-    // clientSecret: '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',
-    // refreshToken:
-    //   '1//04HwcAdszT-cKCgYIARAAGAQSNwF-L9IrGK8_gY6N2AcPTwxTTotYVwmwJXHxTOplRaqa8Ln8kB8kRA6iwMy6azIVEssgzuPD5tU',
   },
 });
 
@@ -71,14 +65,6 @@ transporter.sendMail(mailOptions, function(err, data) {
     console.log('Email sent successfully');
   }
 });
-
-// transporter.sendMail(mailOptions, function(err, data) {
-//   if (err) {
-//     console.log('Error ' + err);
-//   } else {
-//     console.log('Email sent successfully');
-//   }
-// });
 
 const port = 3000;
 
