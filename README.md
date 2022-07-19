@@ -6,3 +6,5 @@ https://spurtx-my.sharepoint.com/:i:/g/personal/ayooluwa_spurt_group/Ecx8BU-5dDZ
 ![This is a alt text.](/image/Screenshot.png/ "This is a sample image.")
 
 ![](images/https://github.com/PolyMath-Coder/zuri_flight_api/blob/main/image/Screenshot%20(286).png)
+
+<img src="image Screenshot%20(286).png/>
