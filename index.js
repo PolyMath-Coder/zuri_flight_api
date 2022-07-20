@@ -3,6 +3,10 @@ require('dotenv').config();
 const { json } = require('express');
 const nodemailer = require('nodemailer');
 const AUTH_PASSWORD = process.env.PASSWORD;
+const GOOGLE_CLIENTID = process.env.OAUTH_CLIENTID;
+const GOOGLE_CLIENT_SECRET = process.env.OAUTH_CLIENT_SECRET;
+const GOOGLE_REFRESH_TOKEN = process.env.OAUTH_REFRESH_TOKEN;
+
 const { email, mailGenerator } = require('./email');
 const AUTH_EMAIL = process.env.EMAIL_ADDRESS;
 const app = express();
@@ -19,9 +23,9 @@ let transporter = nodemailer.createTransport({
     // type: 'OAuth2',
     user: AUTH_EMAIL,
     pass: AUTH_PASSWORD,
-    clientId: process.env.OAUTH_CLIENTID,
-    clientSecret: process.env.OAUTH_CLIENT_SECRET,
-    refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+    clientId: GOOGLE_CLIENTID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    refreshToken: GOOGLE_REFRESH_TOKEN,
   },
 });
 
