@@ -6,6 +6,7 @@ const AUTH_PASSWORD = process.env.PASSWORD;
 const { email, mailGenerator } = require('./email');
 const AUTH_EMAIL = process.env.EMAIL_ADDRESS;
 const app = express();
+const PORT = process.env.PORT;
 
 app.use(json());
 
@@ -35,8 +36,6 @@ transporter.sendMail(mailOptions, function(err, data) {
   }
 });
 
-const port = 3000;
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
